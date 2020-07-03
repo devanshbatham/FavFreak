@@ -11,6 +11,8 @@ I have created this tool for making my work easier when it comes to recon using 
 
 ### How to install and use 
 
+Note : Tested with python3.6.9 on Ubuntu/Kali
+
 ```
 $ git clone https://github.com/devanshbatham/FavFreak
 $ cd FavFreak
