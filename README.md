@@ -7,7 +7,7 @@
 
 ### Introduction 
 
-I have created this tool for making my work easier when it comes to recon using Favincon hashes, it takes a list of urls (with https or http protocol) from stdin ,then it fetches favicon.ico and calculates its hash value. It sorts the domains/subdomains/IPs according to their favicon hashes and the most interesting part is , It matches calculated favicon hashes with the favicon hashes present in the fingerprint dictionary , If matched then it will show you the results in the output, there is option to generate shodan dorks as well (that is pretty basic and you can do it manually as well)
+I have created this tool for making my work easier when it comes to recon using Favicon hashes, it takes a list of urls (with https or http protocol) from stdin ,then it fetches favicon.ico and calculates its hash value. It sorts the domains/subdomains/IPs according to their favicon hashes and the most interesting part is , It matches calculated favicon hashes with the favicon hashes present in the fingerprint dictionary , If matched then it will show you the results in the output, there is option to generate shodan dorks as well (that is pretty basic and you can do it manually as well)
 
 ### How to install and use 
 
@@ -55,6 +55,6 @@ Add your fingerprints in that dictionary !
 
 Shoot my DM : [@0xAsm0d3us](https://twitter.com/0xAsm0d3us)
 
-#### #Offtopic but Important
+#### Offtopic but Important
 
 This COVID pandemic affected animals too (in an indirect way) . I will be more than happy if you will show some love for Animals by donating to [Animal Aid Unlimited](https://animalaidunlimited.org/) ,[Animal Aid Unlimited](https://animalaidunlimited.org/) saves animals through street animal rescue, spay/neuter and education. Their mission is dedicated to the day when all living beings are treated with compassion and love. ✨
