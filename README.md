@@ -16,6 +16,7 @@ $ git clone https://github.com/devanshbatham/FavFreak
 $ cd FavFreak
 $ virtualenv -p python3 envname
 $ source env/bin/activate
+$ pip3 install -r requirements.txt
 $ cat urls.txt | python3 favfreak.py 
 
 ```
