@@ -3,7 +3,7 @@
 ![FacFreak](https://raw.githubusercontent.com/devanshbatham/FavFreak/master/static/logo.PNG)
 
 ### Detailed Description about this can be found here : 
-// TODO
+Read Blog here : https://medium.com/@Asm0d3us/weaponizing-favicon-ico-for-bugbounties-osint-and-what-not-ace3c214e139
 
 ### Introduction 
 
