@@ -25,7 +25,7 @@ $ cat urls.txt | python3 favfreak.py
 
 Example Run : 
 
-Note : URLS must begin with either http or https
+Note : URLs must begin with either http or https
 
 ```
 $ cat urls.txt
