@@ -90,7 +90,6 @@ if __name__ == "__main__":
             99395752: 'slack-instance',
             878647854: 'atlasian',
             116323821: 'spring-boot',
-            878647854: 'big-IP',
 
             }
 
