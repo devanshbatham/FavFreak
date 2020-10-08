@@ -629,4 +629,4 @@ if __name__ == "__main__":
         if args.output:
             print(f"\n\u001b[32m[+] Output saved here : {args.output}\u001b[0m")
     except KeyboardInterrupt:
-        print("\n\u001b[31m[EXIT]KeyBoard Interrucpt Encountered \u001b[0m")
+        print("\n\u001b[31m[EXIT]KeyBoard Interrupt Encountered \u001b[0m")
