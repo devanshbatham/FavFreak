@@ -16,7 +16,16 @@ from os import path
 def main():
     urls = []
     a = {}
-    for line in sys.stdin:
+    if argv.stdin:
+        another_urls = [line.rstrip('\n') for line in sys.stdin.read().split('\n') if line]
+    elif argv.input:
+        another_urls = [line.rstrip('\n') for line in open(argv.input) if line]
+    else:
+        print('\x1b[1m\x1b[31m[-]\x1b[0m' + ' No stdin or input file provided')
+        exit()
+    for line in another_urls:
+        if not line.startswith('http://') and not line.startswith('https://'):
+            line = 'https://' + line
         if line.strip()[-1] == "/":
             urls.append(line.strip() + "favicon.ico")
         else:
@@ -65,9 +74,11 @@ def main():
 if __name__ == "__main__":
     try:
         parser = argparse.ArgumentParser(description='FavFreak - a Favicon Hash based asset mapper')
+        parser.add_argument('-i', '--input', help = 'Input file')
+        parser.add_argument('-s', '--stdin', action="store_true", help = 'Input from stdin')
         parser.add_argument('-o','--output' , help = 'Output file name')
         parser.add_argument('--shodan' , help = 'Prints Shodan Dorks', action='store_true')
-        args = parser.parse_args()
+        argv = parser.parse_args()
         if os.name == 'nt':
             os.system('cls')
         banner = """\u001b[32m
@@ -599,16 +610,16 @@ if __name__ == "__main__":
                 print("\u001b[31m["+fingerprint[i]+"] \u001b[0m" + str(i) + " - count : " + str(len(a[i])))
 
         print("\n")
-        if args.shodan:
+        if argv.shodan:
             print("-------------------------------------------------------------------")
             print("\u001b[32m[Shodan Dorks] - \u001b[0m\n")
             for i in a.keys():
                 if i != 0:
                     print("\u001b[34m[DORK]\u001b[0m org:\"Target-Name\" http.favicon.hash:"+str(i))
 
-        if args.output:
+        if argv.output:
             for i in a.keys():
-                filename = args.output + "/" + str(i) + ".txt"
+                filename = argv.output + "/" + str(i) + ".txt"
                 if path.exists(filename):
                     os.remove(filename)
                 if not os.path.exists(os.path.dirname(filename)):
@@ -626,7 +637,7 @@ if __name__ == "__main__":
         print(" \u001b[36mcount      \u001b[35mHash\u001b[0m         ")
         for i in a.keys():
             print(f"~ \u001b[36m[{len(a[i])}]  : \u001b[35m[{i}]\u001b[0m ")
-        if args.output:
-            print(f"\n\u001b[32m[+] Output saved here : {args.output}\u001b[0m")
+        if argv.output:
+            print(f"\n\u001b[32m[+] Output saved here : {argv.output}\u001b[0m")
     except KeyboardInterrupt:
         print("\n\u001b[31m[EXIT]KeyBoard Interrupt Encountered \u001b[0m")
