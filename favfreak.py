@@ -585,7 +585,8 @@ if __name__ == "__main__":
             -1249852061:"Microsoft Outlook",
             999357577:"? (Possibly DVR)",
             492290497:"? (Possible IP Camera)",
-            400100893:"? (DVR)"
+            400100893:"? (DVR)",
+            -1252041730:"Vue.js"
 
             }
 
