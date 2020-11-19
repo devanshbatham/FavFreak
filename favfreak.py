@@ -15,6 +15,7 @@ from os import path
 
 def main():
     urls = []
+    c = 0
     a = {}
     for line in sys.stdin:
         if line.strip()[-1] == "/":
@@ -592,12 +593,20 @@ if __name__ == "__main__":
 
 
 
+
+
         print("\n")
         print("-------------------------------------------------------------------")
         print("\u001b[32m[FingerPrint Based Detection Results] - \u001b[0m\n")
         for i in a.keys():
             if i in fingerprint.keys():
                 print("\u001b[31m["+fingerprint[i]+"] \u001b[0m" + str(i) + " - count : " + str(len(a[i])))
+               # print('\n'.join(a[i][:-12]))
+                if len(a[i]) > 0:
+                    for k in a[i]:
+                        print("     " + k[:-12])
+        
+                
 
         print("\n")
         if args.shodan:
@@ -615,7 +624,7 @@ if __name__ == "__main__":
                 if not os.path.exists(os.path.dirname(filename)):
                     try:
                         os.makedirs(os.path.dirname(filename))
-                    except OSError as exc:
+                    except OSError as exc: 
                         if exc.errno != errno.EEXIST:
                             raise
             
@@ -630,4 +639,4 @@ if __name__ == "__main__":
         if args.output:
             print(f"\n\u001b[32m[+] Output saved here : {args.output}\u001b[0m")
     except KeyboardInterrupt:
-        print("\n\u001b[31m[EXIT]KeyBoard Interrupt Encountered \u001b[0m")
+        print("\n\u001b[31m[EXIT]KeyBoard Interrucpt Encountered \u001b[0m")
