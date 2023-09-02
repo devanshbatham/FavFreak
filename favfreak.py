@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from multiprocessing.pool import ThreadPool
 from time import time as timer
-from urllib.request import urlopen
+import requests
 import mmh3
 import codecs
 import sys
@@ -25,11 +25,9 @@ def main():
     
     def fetch_url(url):
         try:
-            ctx = ssl.create_default_context()
-            ctx.check_hostname = False
-            ctx.verify_mode = ssl.CERT_NONE
-            response = urlopen(url, timeout=5,context=ctx)
-            favicon = codecs.encode(response.read(),"base64")
+            user_agent = {'User-agent': 'Mozilla/5.0'}
+            response  = requests.get(url, headers = user_agent)
+            favicon = codecs.encode(response.content,"base64")
             hash = mmh3.hash(favicon)
             key = hash
             a.setdefault(key, [])
